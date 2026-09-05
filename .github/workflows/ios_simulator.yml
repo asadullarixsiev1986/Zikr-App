@@ -8,7 +8,7 @@ jobs:
     runs-on: macos-latest
     defaults:
       run:
-        working-directory: ./ios # <--- НАПИШИТЕ НАЗВАНИЕ ПАПКИ ЗДЕСЬ
+        working-directory: ./zikr_app # <--- НАПИШИТЕ НАЗВАНИЕ ПАПКИ ЗДЕСЬ
 
     steps:
       - name: Checkout code
