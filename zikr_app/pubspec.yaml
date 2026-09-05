@@ -1,0 +1,40 @@
+name: zikr_app
+description: "Zikr App — электронный тасбих, дуа, кибла"
+publish_to: 'none'
+version: 1.2.0+3
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.2.3
+  share_plus: ^10.0.2
+  cupertino_icons: ^1.0.6
+  # --- новые зависимости для этого апдейта ---
+  geolocator: ^13.0.1        # геолокация пользователя
+  flutter_compass: ^0.8.1    # показания компаса устройства
+  audioplayers: ^6.1.0       # проигрывание аудио зикров
+  uuid: ^4.4.2               # уникальные id для пользовательских дуа
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/audio/
+
+# Конфигурация генерации иконки приложения.
+# Запуск после pub get: flutter pub run flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#00695C"
+  adaptive_icon_foreground: "assets/icon/icon.png"
