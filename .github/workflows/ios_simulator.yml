@@ -6,6 +6,10 @@ on:
 jobs:
   build:
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./НАЗВАНИЕ_ВАШЕЙ_ПАПКИ # <--- НАПИШИТЕ НАЗВАНИЕ ПАПКИ ЗДЕСЬ
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,7 +28,7 @@ jobs:
       - name: Zip the app
         run: |
           cd build/ios/iphonesimulator
-          zip -r ../../../ios-app.zip Runner.app
+          zip -r $GITHUB_WORKSPACE/ios-app.zip Runner.app
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
