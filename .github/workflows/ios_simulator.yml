@@ -22,6 +22,15 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      # --- НАЧАЛО НОВОГО БЛОКА ---
+      - name: Create iOS project
+        run: flutter create --platforms=ios .
+      # --- КОНЕЦ НОВОГО БЛОКА ---
+
+      - name: Build for iOS Simulator
+        run: flutter build ios --simulator
+        run: flutter pub get
+
       - name: Build for iOS Simulator
         run: flutter build ios --simulator
 
